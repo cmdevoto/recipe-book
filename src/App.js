@@ -1,4 +1,5 @@
 import './App.css';
+import Navigation from './Components/Navigation.js';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
           Welcome to your Recipe Book!
         </p>
       </header>
+      <Navigation></Navigation>
     </body>
   );
 }
