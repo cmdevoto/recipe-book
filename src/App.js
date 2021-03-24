@@ -1,5 +1,6 @@
 import './App.css';
 import Navigation from './Components/Navigation.js';
+import RecipeCard from './Components/RecipeCard.js';
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
         </p>
       </header>
       <Navigation></Navigation>
+
+      <RecipeCard></RecipeCard>
     </body>
   );
 }
