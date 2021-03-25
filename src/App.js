@@ -1,6 +1,7 @@
 import './App.css';
 import Navigation from './Components/Navbar/Navigation.js';
 import RecipeCard from './Components/RecipeCard.js';
+import { Recipes } from './Components/Recipes.js';
 
 function App() {
   return (

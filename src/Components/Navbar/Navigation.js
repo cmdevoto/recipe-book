@@ -6,12 +6,14 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
+
 function Navigation() {
     /* testing event handler in console */
     function handleClick(e) {
         e.preventDefault();
         console.log('The link was clicked.');
       }
+
     return(
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="#home">My Recipe Book</Navbar.Brand>
