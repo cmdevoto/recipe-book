@@ -3,7 +3,9 @@ import Navigation from './Components/Navbar/Navigation.js';
 import RecipeCard from './Components/RecipeCard.js';
 import { Recipes } from './Components/Recipes.js';
 
+
 function App() {
+
   return (
     <body className="App">
       <header className="App-header">
@@ -12,7 +14,6 @@ function App() {
         </p>
       </header>
       <Navigation></Navigation>
-
       <RecipeCard></RecipeCard>
     </body>
   );
