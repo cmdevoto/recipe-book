@@ -20,7 +20,7 @@ function Navigation() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="navbar">
                 <Nav.Link href="#home" onClick={handleClick}>Home</Nav.Link>
-                <NavDropdown title="RecipeDrop Type" id="basic-nav-dropdown">
+                <NavDropdown title="Recipe Type" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1" >Breakfast</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Lunch</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.3">Dinner</NavDropdown.Item>
