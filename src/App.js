@@ -3,6 +3,11 @@ import Navigation from './Components/Navbar/Navigation.js';
 import RecipeCard from './Components/RecipeCard.js';
 import  AxiosTest  from './Components/AxiosTest.js';
 
+import * as Env from "./environments";
+import Parse from "parse";
+
+Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
+Parse.serverURL = Env.SERVER_URL
 
 function App() {
 
