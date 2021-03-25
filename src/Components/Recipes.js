@@ -1,6 +1,7 @@
 import React from "react";
-/*import { recipeData } from "./test.json"
+//import { recipeData } from "./test.json"
 
+/*
 export const Recipes = () => {
     return (
       <>

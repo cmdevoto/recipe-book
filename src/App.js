@@ -1,7 +1,7 @@
 import './App.css';
 import Navigation from './Components/Navbar/Navigation.js';
 import RecipeCard from './Components/RecipeCard.js';
-import { Recipes } from './Components/Recipes.js';
+import  AxiosTest  from './Components/AxiosTest.js';
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         </p>
       </header>
       <Navigation></Navigation>
+      <AxiosTest></AxiosTest>
       <RecipeCard></RecipeCard>
     </body>
   );
