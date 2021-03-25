@@ -1,5 +1,5 @@
 import './App.css';
-import Navigation from './Components/Navigation.js';
+import Navigation from './Components/Navbar/Navigation.js';
 import RecipeCard from './Components/RecipeCard.js';
 
 function App() {
