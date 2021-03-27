@@ -30,7 +30,7 @@ export const getById = (id) => {
 // READ ACTION - get recipe in Parse class recipe
 
 export const getAllRecipes = () => {
-    const Recipe = Parse.Object.extend("Recipes");
+    const Recipe = Parse.Object.extend("Recipe");
     const query = new Parse.Query(Recipe);
     // query.equalTo("user", user)
     return query.find().then((results) =>{
@@ -43,7 +43,7 @@ export const getAllRecipes = () => {
 export const removeLesson = (id) => {
     const Recipe = Parse.Object.extend("Recipe");
     const query = new Parse.Query(Recipe);
-    query.get(id).then((Recipe) => {
+    query.get(id).then((recipe) => {
         return recipe.destroy();
     });
 };

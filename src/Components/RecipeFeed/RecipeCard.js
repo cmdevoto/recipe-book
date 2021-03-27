@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-function RecipeCard ( {name, imgPath, description}){
+const RecipeCard = ( {name, imgPath, description}) => {
     return(
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={imgPath} />
@@ -13,6 +13,6 @@ function RecipeCard ( {name, imgPath, description}){
             </Card.Body>
         </Card>
     );
-}
+};
 
 export default RecipeCard;
