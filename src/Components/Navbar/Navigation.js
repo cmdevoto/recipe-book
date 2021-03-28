@@ -16,10 +16,11 @@ function Navigation() {
 
     return(
         <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">My Recipe Book</Navbar.Brand>
+            <Navbar.Brand href="/">My Recipe Book</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="navbar">
-                <Nav.Link href="#home" onClick={handleClick}>Home</Nav.Link>
+                <Nav.Link href="/" onClick={handleClick}>Home Test</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown title="Recipe Type" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1" >Breakfast</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Lunch</NavDropdown.Item>
@@ -29,7 +30,7 @@ function Navigation() {
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/3.6">All Recipies</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#addrecipe">Add Recipe</Nav.Link>
+                <Nav.Link href="/add">Add Recipe</Nav.Link>
             </Nav>
             <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />

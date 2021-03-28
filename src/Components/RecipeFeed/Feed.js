@@ -53,16 +53,13 @@ const Feed = () => {
         recipe_array.map((recipe) => {
             return (
                 <div>
-                    <p>this recipe is {recipe.name} </p>
+                    <RecipeCard name={recipe.name} imgPath={recipe.imgPath} description={recipe.description}></RecipeCard>
                 </div>
             );
         })
     );
-    //<RecipeCard recipe={recipe}> </RecipeCard>
-
-    // we'll loop through this array with mapping to then make each recipe a card
-    // work in progress but i feel like i have a good grasp
-
 };
+
+//<img src={require('../../images/focaccia.JPG')} />
 
 export default Feed;
