@@ -92,22 +92,22 @@ const AddRecipe = () => {
     return(
         <div>
             <Form style={{margin:"30px"}}>
-                <Form.Group controlId="ControlInput1">
+                <Form.Group>
                     <Form.Label>Recipe Name</Form.Label>
                     <Form.Control id="name" onChange={onChangeHandlerName} type="text"/>
                 </Form.Group>
 
-                <Form.Group controlId="ControlTextarea1">
+                <Form.Group>
                     <Form.Label>Description</Form.Label>
                     <Form.Control id="desc" onChange={onChangeHandlerDesc} as="textarea" rows={2}/>
                 </Form.Group>
 
-                <Form.Group controlId="ControlInput2">
+                <Form.Group>
                     <Form.Label>Image Path</Form.Label>
                     <Form.Control id="path" onChange={onChangeHandlerImg} type="text"/>
                 </Form.Group>
 
-                <Form.Group controlId="ControlSelect1">
+                <Form.Group>
                     <Form.Label>Type of Recipe</Form.Label>
                     <Form.Control id="type" onChange={onChangeHandlerType} as="select">
                         <option>Breakfast</option>
@@ -118,17 +118,17 @@ const AddRecipe = () => {
                     </Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="ControlTextarea2">
+                <Form.Group>
                     <Form.Label>Ingredients</Form.Label>
                     <Form.Control id="ingredients" onChange={onChangeHandlerIngredients} as="textarea" rows={3}/>
                 </Form.Group>
 
-                <Form.Group controlId="ControlTextarea3">
+                <Form.Group>
                     <Form.Label>Steps</Form.Label>
                     <Form.Control id="steps" onChange={onChangeHandlerSteps} as="textarea" rows={3}/>
                 </Form.Group>
 
-                <Form.Group controlId="ControlTextarea4">
+                <Form.Group>
                     <Form.Label>Notes</Form.Label>
                     <Form.Control id="notes" onChange={onChangeHandlerNotes} as="textarea" rows={3}/>
                 </Form.Group>
