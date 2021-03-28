@@ -5,13 +5,19 @@ import { logicalExpression } from "@babel/types";
 
 // CREATE ACTION ~ new lesson with Name
 
-export const createRecipe = (Name) => {
+export const createRecipe = (Name, Description, ImgPath, Type, Ingredients, Steps, Notes) => {
     console.log('creating: ', Name);
     const Recipe = Parse.Object.extend("Recipe");
     const recipe = new Recipe();
 
     // use setter to update the object
     recipe.set("name", Name);
+    recipe.set("description", Description);
+    recipe.set("imgPath", ImgPath);
+    recipe.set("type", Type);
+    recipe.set("ingredients", Ingredients);
+    recipe.set("steps", Steps);
+    recipe.set("notes", Notes);
     return recipe.save().then((result) => {
         return result;
     });
@@ -40,7 +46,7 @@ export const getAllRecipes = () => {
 
 // DELETE ACTION -- remove recipe by id
 
-export const removeLesson = (id) => {
+export const removeRecipe = (id) => {
     const Recipe = Parse.Object.extend("Recipe");
     const query = new Parse.Query(Recipe);
     query.get(id).then((recipe) => {

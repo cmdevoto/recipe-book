@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import {
-    getAllRecipes,
-    getById,
-    createRecipe,
-    removeRecipe
+    getAllRecipes
   } from "../../../src/Common/Services/LearnService";
 
 const Feed = () => {
