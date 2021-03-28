@@ -17,7 +17,6 @@ const Feed = () => {
             console.log(recipes);
             setRecipes(recipes);
             console.log(recipes[1]);
-            console.log(recipes.length)
         });
     }, []);
 
@@ -51,8 +50,15 @@ const Feed = () => {
     const [remove, setRemove] = useState("");
 
     return(
-    <p> just testing feed </p>
+        recipe_array.map((recipe) => {
+            return (
+                <div>
+                    <p>this recipe is {recipe.name} </p>
+                </div>
+            );
+        })
     );
+    //<RecipeCard recipe={recipe}> </RecipeCard>
 
     // we'll loop through this array with mapping to then make each recipe a card
     // work in progress but i feel like i have a good grasp
