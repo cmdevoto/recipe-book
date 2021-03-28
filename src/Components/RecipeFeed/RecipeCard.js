@@ -6,7 +6,8 @@ const RecipeCard = ( {name, imgPath, description} ) => {
 
     const cardStyle = {
         width: "20rem",
-        margin: "30px"
+        margin: "30px",
+        justifyContent: "center"
     }
 
     return(

@@ -8,18 +8,12 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 
 function Navigation() {
-    /* testing event handler in console */
-    function handleClick(e) {
-        e.preventDefault();
-        console.log('The link was clicked.');
-      }
 
     return(
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="/">My Recipe Book</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="navbar">
-                <Nav.Link href="/" onClick={handleClick}>Home Test</Nav.Link>
                 <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown title="Recipe Type" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1" >Breakfast</NavDropdown.Item>
