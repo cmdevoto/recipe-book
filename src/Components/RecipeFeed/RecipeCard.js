@@ -23,7 +23,6 @@ const RecipeCard = ( {name, imgPath, description} ) => {
         </div>
     );
 };
-
 //<Card.Img variant="top" src={imgPath} />
 
 export default RecipeCard;
