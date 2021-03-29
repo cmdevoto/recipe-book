@@ -27,6 +27,7 @@ const CategoryFeed = () => {
         let r_temp = r.get("type");
         console.log("this is r_temp");
         console.log(r_temp);
+        //Only add recipe to array if the categories match
         let eq = r_temp.localeCompare(type);
         if (eq == 0){
             let r_type= r.get("type");
@@ -52,8 +53,6 @@ const CategoryFeed = () => {
 
     console.log(recipe_array);
 
-    //const [add, setAdd] = useState(false);
-    //const [remove, setRemove] = useState("");
 
     return(
         recipe_array.map((recipe) => {

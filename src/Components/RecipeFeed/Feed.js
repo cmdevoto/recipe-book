@@ -58,6 +58,5 @@ const Feed = () => {
     );
 };
 
-//<img src={require('../../images/focaccia.JPG')} />
 
 export default Feed;
