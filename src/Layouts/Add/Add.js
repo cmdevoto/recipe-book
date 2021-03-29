@@ -4,7 +4,7 @@ import Header from '../../Components/NavHeader/Header.js'
 import AddRecipe from '../../Components/AddRecipe/AddRecipe.js';
 import '../Home/Home.css';
 
-
+// layout for the add page -- uses Header and AddRecipe
 const Add = () => {
     return (
         <body>

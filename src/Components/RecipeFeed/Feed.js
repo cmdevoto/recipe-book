@@ -17,6 +17,7 @@ const Feed = () => {
         });
     }, []);
 
+    // create recipe array to easily manipulate data
     let recipe_array = [];
     for (let i = 0; i < recipes.length; i++){
         let r = recipes[i];
@@ -50,7 +51,7 @@ const Feed = () => {
         recipe_array.map((recipe) => {
             return (
                 <div>
-                    <RecipeCard name={recipe.name} imgPath={recipe.imgPath} description={recipe.description}></RecipeCard>
+                    <RecipeCard name={recipe.name} imgPath={recipe.imgPath} description={recipe.description} ingredients={recipe.ingredients} steps={recipe.steps} notes={recipe.notes}></RecipeCard>
                 </div>
             );
         })

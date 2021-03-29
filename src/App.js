@@ -10,20 +10,8 @@ import Parse from "parse";
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
 
-/*
-function App() {
-  return (
-    <body className="App">
-      <header className="App-header">
-        <p>
-          Welcome to your Recipe Book!
-        </p>
-      </header>
-      <Components />
-    </body>
-  );
-}
-*/
+// redirects based on the path and calls the different layouts (Home and Add)
+
 function App() {
   return (
     <Router>
@@ -39,5 +27,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

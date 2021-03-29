@@ -1,13 +1,14 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-const RecipeCard = ( {name, imgPath, description} ) => {
+const RecipeCard = ( {name, imgPath, description, ingredients, steps, notes} ) => {
 
+    // center this on the page 
     const cardStyle = {
-        width: "20rem",
-        margin: "30px",
-        justifyContent: "center"
+        width: "30rem",
+        margin: "auto",
+        padding: "10px"
     }
 
     return(
@@ -15,9 +16,14 @@ const RecipeCard = ( {name, imgPath, description} ) => {
         <Card style={cardStyle}>
             <Card.Img variant="top" src={imgPath} />
             <Card.Body>
-            <Card.Title>{name}</Card.Title>
-            <Card.Text>{description}</Card.Text>
-            <Button variant="primary">Go To Recipe</Button>
+            <Card.Title style={{textAlign:"center", fontWeight:"900"}}>{name}</Card.Title>
+            <Card.Subtitle style={{textAlign:"center"}}>{description}</Card.Subtitle>
+            <Card.Title>Ingredients</Card.Title>
+            <Card.Text>{ingredients}</Card.Text>
+            <Card.Title>Steps</Card.Title>
+            <Card.Text>{steps}</Card.Text>
+            <Card.Title>Notes</Card.Title>
+            <Card.Text>{notes}</Card.Text>
             </Card.Body>
         </Card>
         </div>

@@ -12,6 +12,8 @@ const AddRecipe = () => {
 
     const [recipes, setRecipes] = useState([]);
     
+    // set up variables for the recipes
+
     const [name, setName] = useState();
     const [description, setDescription] = useState();
     const [imgPath, setImgPath] = useState();
@@ -28,12 +30,8 @@ const AddRecipe = () => {
         if (name && description && imgPath && type && ingredients && steps && notes && add) {
           createRecipe(name, description, imgPath, type, ingredients, steps, notes).then((newRecipe) => {
             setAdd(false);
-            // Add the newly created lesson to the lessons array
-            // to render the new list of lessons (thru spread/concatination)
+            // Add the newly created recipe to the recipe array
             setRecipes([...recipes, newRecipe]);
-            //Note: CANNOT MANIPULATE STATE ARRAY DIRECTLY
-            //lessons = lessons.push(lesson)
-            //setLessons(lessons)
           });
         }
     }, [name, description, imgPath, type, ingredients, steps, notes, recipes, add]);
@@ -42,14 +40,14 @@ const AddRecipe = () => {
     const onClickHandler = (e) => {
         e.preventDefault();
         console.log("handled");
-        // Trigger add flag to create lesson and
-        // re-render list with new lesson
+        // Trigger add flag to create recipe and
+        // re-render list with new recipe
         setAdd(true);
         toast.success("Recipe Added", {position: toast.POSITION.TOP_LEFT})
 
       };
     
-      // Handler to track changes to the child input text
+      // Handler to track changes to the child input text -- different for each text field
       const onChangeHandlerName = (e) => {
         e.preventDefault();
         console.log(e.target.value);
@@ -107,7 +105,7 @@ const AddRecipe = () => {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Image Path</Form.Label>
+                    <Form.Label>Image URL</Form.Label>
                     <Form.Control id="path" onChange={onChangeHandlerImg} type="text"/>
                 </Form.Group>
 
