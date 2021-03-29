@@ -6,6 +6,7 @@ import Category from "./Layouts/Category/Category.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as Env from "./environments.js";
 import Parse from "parse";
+import Breakfast from "./Layouts/Category/Breakfast.js";
 
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
@@ -31,7 +32,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/add" exact component={Add}></Route>
-          <Route path="/Breakfast" exact component={Category}></Route>
+          <Route path="/Breakfast" exact component={Breakfast}></Route>
           <Route path="/Lunch" exact component={Category}></Route>
           <Route path="/Dinner" exact component={Category}></Route>
         </Switch>
