@@ -44,8 +44,8 @@ const Feed = () => {
 
     console.log(recipe_array);
 
-    const [add, setAdd] = useState(false);
-    const [remove, setRemove] = useState("");
+    //const [add, setAdd] = useState(false);
+    //const [remove, setRemove] = useState("");
 
     return(
         recipe_array.map((recipe) => {

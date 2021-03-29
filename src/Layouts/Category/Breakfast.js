@@ -15,7 +15,7 @@ const Breakfast = () => {
         <body>
             <div>
                 <Header></Header>
-                <BreakfastFeed style="feedStyle"></BreakfastFeed>
+                <BreakfastFeed style={feedStyle}></BreakfastFeed>
             </div>
         </body>
     );

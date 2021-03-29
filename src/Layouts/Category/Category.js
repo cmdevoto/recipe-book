@@ -15,7 +15,7 @@ const Category = () => {
         <body>
             <div>
                 <Header></Header>
-                <CategoryFeed style="feedStyle"></CategoryFeed>
+                <CategoryFeed style={feedStyle}></CategoryFeed>
             </div>
         </body>
     );
