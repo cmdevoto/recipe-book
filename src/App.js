@@ -6,7 +6,7 @@ import Category from "./Layouts/Category/Category.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as Env from "./environments.js";
 import Parse from "parse";
-import Breakfast from "./Layouts/Category/Breakfast.js";
+
 
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
