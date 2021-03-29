@@ -110,6 +110,7 @@ const AddRecipe = () => {
                 <Form.Group>
                     <Form.Label>Type of Recipe</Form.Label>
                     <Form.Control id="type" onChange={onChangeHandlerType} as="select">
+                        <option>Select Category</option>
                         <option>Breakfast</option>
                         <option>Lunch</option>
                         <option>Dinner</option>
