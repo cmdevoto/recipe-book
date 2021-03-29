@@ -1,4 +1,4 @@
-import CategoryFeed from '../../Components/RecipeFeed/Feed.js';
+import BreakfastFeed from '../../Components/RecipeFeed/CategoryFeed.js';
 import Header from '../../Components/NavHeader/Header.js';
 import React from "react";
 
@@ -15,7 +15,7 @@ const Category = () => {
         <body>
             <div>
                 <Header></Header>
-                <CategoryFeed style={feedStyle}></CategoryFeed>
+                <BreakfastFeed style={feedStyle}></BreakfastFeed>
             </div>
         </body>
     );

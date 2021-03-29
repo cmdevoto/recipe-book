@@ -4,7 +4,7 @@ import {
     getAllRecipes
   } from "../../../src/Common/Services/LearnService";
 
-const Feed = () => {
+const CategoryFeed = () => {
     const [recipes, setRecipes] = useState([]);
 
     // UseEffect to run when the page loads to
@@ -17,17 +17,22 @@ const Feed = () => {
         });
     }, []);
 
+    //grab current category
+    const type = window.location.pathname.substring(1)
+    console.log(type)
     let recipe_array = [];
+    console.log("FOR")
     for (let i = 0; i < recipes.length; i++){
         let r = recipes[i];
         let r_temp = r.get("type");
-        var eq = r_temp.localCompare("Breakfast")
+        console.log("this is r_temp");
+        console.log(r_temp);
+        let eq = r_temp.localeCompare(type);
         if (eq == 0){
-            let r_type= r.get("type")
+            let r_type= r.get("type");
             let r_name = r.get("name");
             let r_description = r.get("description");
             let r_imgPath = r.get("imgPath");
-            let r_type = r.get("type");
             let r_ingredients = r.get("ingredients");
             let r_steps = r.get("steps");
             let r_notes = r.get("notes");
@@ -43,11 +48,12 @@ const Feed = () => {
         }
         
     }
+    console.log("End FOR")
 
     console.log(recipe_array);
 
-    const [add, setAdd] = useState(false);
-    const [remove, setRemove] = useState("");
+    //const [add, setAdd] = useState(false);
+    //const [remove, setRemove] = useState("");
 
     return(
         recipe_array.map((recipe) => {
@@ -62,4 +68,4 @@ const Feed = () => {
 
 //<img src={require('../../images/focaccia.JPG')} />
 
-export default Feed;
+export default CategoryFeed;
