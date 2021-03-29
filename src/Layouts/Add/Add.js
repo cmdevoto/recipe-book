@@ -8,12 +8,12 @@ import '../Home/Home.css';
 // layout for the add page -- uses Header and AddRecipe
 const Add = () => {
     return (
-        <body>
+        //<body>
             <div>
                 <Header />
                 <AddRecipe/>
             </div>
-        </body>
+        //</body>
     );
 };
 

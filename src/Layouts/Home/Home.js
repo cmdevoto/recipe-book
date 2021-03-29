@@ -13,12 +13,12 @@ const Home = () => {
     }
 
     return (
-        <body>
+        //<body>
             <div>
                 <Header></Header>
                 <Feed style={feedStyle}></Feed>
             </div>
-        </body>
+        //</body>
     );
 };
   

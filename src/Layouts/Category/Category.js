@@ -12,12 +12,12 @@ const Category = () => {
     }
 
     return (
-        <body>
+        //<body>
             <div>
                 <Header></Header>
                 <CategoryFeed style={feedStyle}></CategoryFeed>
             </div>
-        </body>
+        //</body>
     );
 };
   
