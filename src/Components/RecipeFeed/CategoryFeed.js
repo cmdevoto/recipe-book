@@ -29,7 +29,7 @@ const CategoryFeed = () => {
         console.log(r_temp);
         //Only add recipe to array if the categories match
         let eq = r_temp.localeCompare(type);
-        if (eq == 0){
+        if (eq === 0){
             let r_type= r.get("type");
             let r_name = r.get("name");
             let r_description = r.get("description");
