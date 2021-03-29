@@ -3,7 +3,7 @@ import Parse from "parse";
 
 // SERVICE FOR PARSE SERVER OPERATIONS
 
-// CREATE ACTION ~ new lesson with Name
+// CREATE ACTION ~ new recipe
 
 export const createRecipe = (Name, Description, ImgPath, Type, Ingredients, Steps, Notes) => {
     console.log('creating: ', Name);
@@ -39,6 +39,16 @@ export const getAllRecipes = () => {
     const Recipe = Parse.Object.extend("Recipe");
     const query = new Parse.Query(Recipe);
     // query.equalTo("user", user)
+    return query.find().then((results) =>{
+        return results;
+    });
+};
+
+// READ ACTION -- get recipes made by certain user
+export const getRecipes = (username) => {
+    const Recipe = Parse.Object.extend("Recipe");
+    const query = new Parse.Query(Recipe);
+    query.equalTo("username", username)
     return query.find().then((results) =>{
         return results;
     });

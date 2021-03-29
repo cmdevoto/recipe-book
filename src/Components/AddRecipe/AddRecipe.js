@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
     createRecipe
-} from "../../../src/Common/Services/LearnService";
+} from "../../Common/Services/RecipeLearnService";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 import AddRecipeForm from './AddRecipeForm.js'

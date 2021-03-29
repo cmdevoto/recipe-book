@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import {
     getAllRecipes
-  } from "../../../src/Common/Services/LearnService";
+  } from "../../Common/Services/RecipeLearnService";
 
 const CategoryFeed = () => {
     const [recipes, setRecipes] = useState([]);
@@ -29,6 +29,7 @@ const CategoryFeed = () => {
         console.log(r_temp);
         let eq = r_temp.localeCompare(type);
         if (eq == 0){
+            console.log(r)
             let r_type= r.get("type");
             let r_name = r.get("name");
             let r_description = r.get("description");
@@ -36,21 +37,32 @@ const CategoryFeed = () => {
             let r_ingredients = r.get("ingredients");
             let r_steps = r.get("steps");
             let r_notes = r.get("notes");
+            let r_u = r.get("username");
+        
+            // this is only because we do not have a log in
+            // when users can log in, the username will be automatically recorded
+            // now when adding recipe, it will say not specified
+            
+            let r_username = "not specified"
+            if (typeof r_u !== 'undefined'){
+                r_username = r_u.id
+            }
+
             recipe_array.push({
+                id: r.id,
                 name: r_name,
                 description: r_description,
                 imgPath: r_imgPath,
                 type: r_type,
                 ingredients: r_ingredients,
                 steps: r_steps,
-                notes: r_notes
+                notes: r_notes,
+                username: r_username
             });
         }
         
     }
     console.log("End FOR")
-
-    console.log(recipe_array);
 
     //const [add, setAdd] = useState(false);
     //const [remove, setRemove] = useState("");
@@ -59,7 +71,7 @@ const CategoryFeed = () => {
         recipe_array.map((recipe) => {
             return (
                 <div>
-                    <RecipeCard name={recipe.name} imgPath={recipe.imgPath} description={recipe.description}></RecipeCard>
+                    <RecipeCard key={recipe.id} name={recipe.name} imgPath={recipe.imgPath} description={recipe.description} ingredients={recipe.ingredients} steps={recipe.steps} notes={recipe.notes} username={recipe.username}></RecipeCard>
                 </div>
             );
         })

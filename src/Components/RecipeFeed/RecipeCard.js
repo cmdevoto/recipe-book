@@ -2,7 +2,7 @@ import React from "react";
 //import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-const RecipeCard = ( {name, imgPath, description, ingredients, steps, notes} ) => {
+const RecipeCard = ( {name, imgPath, description, ingredients, steps, notes, username} ) => {
 
     // center this on the page 
     const cardStyle = {
@@ -24,6 +24,7 @@ const RecipeCard = ( {name, imgPath, description, ingredients, steps, notes} ) =
             <Card.Text>{steps}</Card.Text>
             <Card.Title>Notes</Card.Title>
             <Card.Text>{notes}</Card.Text>
+            <Card.Subtitle style={{textAlign:"center"}}>Recipe By: {username}</Card.Subtitle>
             </Card.Body>
         </Card>
         </div>
