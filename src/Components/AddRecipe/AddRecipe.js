@@ -4,7 +4,9 @@ import {
 } from "../../../src/Common/Services/LearnService";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
+toast.configure()
 
 const AddRecipe = () => {
 
@@ -29,7 +31,6 @@ const AddRecipe = () => {
             // Add the newly created lesson to the lessons array
             // to render the new list of lessons (thru spread/concatination)
             setRecipes([...recipes, newRecipe]);
-    
             //Note: CANNOT MANIPULATE STATE ARRAY DIRECTLY
             //lessons = lessons.push(lesson)
             //setLessons(lessons)
@@ -37,12 +38,15 @@ const AddRecipe = () => {
         }
     }, [name, description, imgPath, type, ingredients, steps, notes, recipes, add]);
 
+    
     const onClickHandler = (e) => {
         e.preventDefault();
         console.log("handled");
         // Trigger add flag to create lesson and
         // re-render list with new lesson
         setAdd(true);
+        toast.success("Recipe Added", {position: toast.POSITION.TOP_LEFT})
+
       };
     
       // Handler to track changes to the child input text
