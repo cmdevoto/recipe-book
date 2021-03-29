@@ -22,11 +22,11 @@ const BreakfastFeed = () => {
     for (let i = 0; i < recipes.length; i++){
         let r = recipes[i];
         let r_temp = r.get("type");
-        console.log("this is r_temp")
-        console.log(r_temp)
-        var eq = r_temp.localCompare("Breakfast")
+        console.log("this is r_temp");
+        console.log(r_temp);
+        let eq = r_temp.localeCompare("Breakfast");
         if (eq == 0){
-            let r_type= r.get("type")
+            let r_type= r.get("type");
             let r_name = r.get("name");
             let r_description = r.get("description");
             let r_imgPath = r.get("imgPath");
