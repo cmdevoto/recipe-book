@@ -19,10 +19,10 @@ function Navigation() {
                     <NavDropdown.Item href="Breakfast" >Breakfast</NavDropdown.Item>
                     <NavDropdown.Item href="Lunch">Lunch</NavDropdown.Item>
                     <NavDropdown.Item href="Dinner">Dinner</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.4">Dessert</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.5">Miscellaneous</NavDropdown.Item>
+                    <NavDropdown.Item href="Dessert">Dessert</NavDropdown.Item>
+                    <NavDropdown.Item href="Miscellaneous">Miscellaneous</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/">All Recipies</NavDropdown.Item>
+                    <NavDropdown.Item href="AllRecipes">All Recipies</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
             </Nav>

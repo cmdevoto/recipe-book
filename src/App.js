@@ -21,8 +21,11 @@ function App() {
           <Route path="/" exact component={Home}></Route>
           <Route path="/add" exact component={Add}></Route>
           <Route path="/Breakfast" exact component={Breakfast}></Route>
-          <Route path="/Lunch" exact component={Category}></Route>
-          <Route path="/Dinner" exact component={Category}></Route>
+          <Route path="/Lunch" exact component={Breakfast}></Route>
+          <Route path="/Dinner" exact component={Breakfast}></Route>
+          <Route path="/Dessert" exact component={Breakfast}></Route>
+          <Route path="/Miscellaneous" exact component={Breakfast}></Route>
+          <Route path="/AllRecipes" exact component={Home}></Route>
         </Switch>
       </div>
     </Router>

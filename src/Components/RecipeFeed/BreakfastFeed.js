@@ -16,7 +16,10 @@ const BreakfastFeed = () => {
             console.log(recipes[1]);
         });
     }, []);
-
+    console.log()
+    //grab current category
+    const type = window.location.pathname.substring(1)
+    console.log(type)
     let recipe_array = [];
     console.log("FOR")
     for (let i = 0; i < recipes.length; i++){
@@ -24,7 +27,7 @@ const BreakfastFeed = () => {
         let r_temp = r.get("type");
         console.log("this is r_temp");
         console.log(r_temp);
-        let eq = r_temp.localeCompare("Breakfast");
+        let eq = r_temp.localeCompare(type);
         if (eq == 0){
             let r_type= r.get("type");
             let r_name = r.get("name");
