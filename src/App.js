@@ -1,7 +1,8 @@
 import './App.css';
 //import Components from "./Components/Components.js";
 import Home from "./Layouts/Home/Home.js";
-import Add from "./Layouts/Add/Add"
+import Add from "./Layouts/Add/Add";
+import Category from "./Layouts/Category/Category.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as Env from "./environments.js";
 import Parse from "parse";
@@ -30,6 +31,9 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/add" exact component={Add}></Route>
+          <Route path="/Breakfast" exact component={Category}></Route>
+          <Route path="/Lunch" exact component={Category}></Route>
+          <Route path="/Dinner" exact component={Category}></Route>
         </Switch>
       </div>
     </Router>

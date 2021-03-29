@@ -16,9 +16,9 @@ function Navigation() {
             <Nav className="navbar">
                 <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown title="Recipe Type" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1" >Breakfast</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Lunch</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Dinner</NavDropdown.Item>
+                    <NavDropdown.Item href="Breakfast" >Breakfast</NavDropdown.Item>
+                    <NavDropdown.Item href="Lunch">Lunch</NavDropdown.Item>
+                    <NavDropdown.Item href="Dinner">Dinner</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.4">Dessert</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.5">Miscellaneous</NavDropdown.Item>
                     <NavDropdown.Divider />
@@ -26,13 +26,16 @@ function Navigation() {
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
             </Nav>
-            <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-info">Search</Button>
-            </Form>
         </Navbar>
     );
 
 }
 
 export default Navigation;
+
+/* Search bar for later 
+            <Form inline>
+                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                <Button variant="outline-info">Search</Button>
+            </Form>
+*/
