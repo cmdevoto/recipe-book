@@ -22,7 +22,7 @@ function Navigation() {
                     <NavDropdown.Item href="#action/3.4">Dessert</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.5">Miscellaneous</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.6">All Recipies</NavDropdown.Item>
+                    <NavDropdown.Item href="/">All Recipies</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
             </Nav>
