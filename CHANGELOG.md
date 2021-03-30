@@ -31,7 +31,7 @@ Changed:
     - Changed the navigation component to include: Home, drop down of recipe types, and add recipe page. Updated the styling as well
     - Changed App.js to use routing 
     - Changed RecipeCard to use built-in card styling and capabilites from the webpack
-
+    
 
 Fixed:
     - Pass events up from child components
