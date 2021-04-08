@@ -2,24 +2,26 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-const NewAccountForm = () => {
-
+const NewAccountForm = ({ user, onChange, onSubmit }) => {
+    console.log(user);
     return(
         <div>
-            <Form>
+            <Form onSubmit={onSubmit}>
+                <div>
                 <Form.Group controlId="formEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter Email" />
+                    <Form.Control type="text" value={user.email} name="email" onChange={onChange} placeholder="Enter Email" />
                 </Form.Group>
-                <Form.Group controlId="formName">
-                    <Form.Label>Full Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter Full Name" />
+                <Form.Group controlId="formUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="text" value={user.username} name="username" onChange={onChange} placeholder="Enter Username" />
                 </Form.Group>
                 <Form.Group controlId="formPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" value={user.password} name="password" onChange={onChange} placeholder="Password" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                </div>
+                <Button variant="primary" type="submit" onSubmit={onSubmit}>
                     Create Acount
                 </Button>
                 <p><a href="/login">Go back to log-in page</a> </p>

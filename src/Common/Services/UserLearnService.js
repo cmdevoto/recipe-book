@@ -5,18 +5,24 @@ import Parse from "parse";
 
 // CREATE ACTION ~ new user
 
-export const createUser = (Username, Password, Email) => {
-    console.log('creating: ', Username);
-    const User = Parse.Object.extend("User");
-    const user = new User();
+export const createUser = (newUser) => {
+    const user = new Parse.User();
 
     // use setter to update the object
-    user.set("username", Username);
-    user.set("password", Password);
-    user.set("email", Email);
-    return user.save().then((result) => {
-        return result;
-    });
+    user.set("email", newUser.email);
+    user.set("username", newUser.username);
+    user.set("password", newUser.password);
+    
+    console.log("Creating user: ", user);
+
+    return user
+        .signUp()
+        .then((newUserSaved) => {
+            return newUserSaved;
+        })
+        .catch((error) => {
+            alert(`Error: ${error.message}`);
+        });
 };
 
 // READ ACTION - get recipe in Parse class recipe
