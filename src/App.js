@@ -8,6 +8,8 @@ import Register from "./Layouts/Register/Register.js"
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import * as Env from "./environments.js";
 import Parse from "parse";
+import React, { useEffect, useState } from "react";
+
 
 
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
@@ -16,6 +18,7 @@ Parse.serverURL = Env.SERVER_URL;
 // redirects based on the path and calls the different layouts (Home and Add)
 
 function App() {
+
   return (
     <Router>
       <div className="App">

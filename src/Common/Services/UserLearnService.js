@@ -45,6 +45,32 @@ export const getByUsername = (username) => {
     });
 };
 
+export const getByEmail = (email) => {
+    const User = Parse.Object.extend("User");
+    const query = new Parse.Query(User);
+    query.equalTo("email", email)
+    return query.find().then((result) =>{
+        return result;
+    });
+};
+
+export const getByPassword = (password) => {
+    const User = Parse.Object.extend("User");
+    const query = new Parse.Query(User);
+    return query.get(password).then((result) =>{
+        return result;
+    });
+};
+/*
+export const getRecipes = (username) => {
+    const Recipe = Parse.Object.extend("Recipe");
+    const query = new Parse.Query(Recipe);
+    query.equalTo("username", username)
+    return query.find().then((results) =>{
+        return results;
+    });
+};
+};*/
 // DELETE ACTION -- remove user by username
 
 export const removeUser = (username) => {
