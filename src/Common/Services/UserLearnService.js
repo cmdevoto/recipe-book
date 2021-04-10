@@ -25,6 +25,19 @@ export const createUser = (newUser) => {
         });
 };
 
+export const logInUser = (email, password) => {
+    const user = new Parse.User();
+    console.log("Logging in user: ", email);
+
+    return user
+        .logIn(email, password).then((userLoggedIn) => {
+            return userLoggedIn;
+        })
+        .catch((error) => {
+            alert(`Error: ${error.message}`);
+        });
+};
+
 // READ ACTION - get recipe in Parse class recipe
 
 export const getAllUsers = () => {

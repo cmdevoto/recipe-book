@@ -3,19 +3,30 @@ import React, { useEffect, useState } from "react";
 import {
     getAllUsers,
     getByPassword,
-    getByEmail
+    getByEmail,
+    logInUser
 } from "../../Common/Services/UserLearnService";
 
 
 const Authorize = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    
     //token set true when email exists and password matches
-    const [token, setToken] = useState(false)
-    console.log(email)
+    const [token, setToken] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+
     useEffect(() => {
-        console.log(email)
-        if (email && password){
+        if (email && password && loggedIn){
+            logInUser(email, password).then((loggedInUser) => {
+                if (loggedInUser){
+                    alert(
+                        `${loggedInUser}, you successfully logged in!`
+                    );
+                }
+                setLoggedIn(false);
+            });
+            /*
             getByEmail(email).then((gotEmail) => {
                 console.log("called after the end of the main stack. the value received/returned is: " + gotEmail);
                 return gotEmail;
@@ -27,29 +38,33 @@ const Authorize = () => {
                 }
             setToken(true);
             });
+            */
         }
         console.log("end use effect")
-    }, [token]);
+    }, [email, password, loggedIn]);
 
     const onSubmitHandler = (e) => {
+        console.log("handled")
         e.preventDefault();
-
+        setLoggedIn(true);
     };
+
     const onChangeHandlerEmail = (e) => {
         e.preventDefault();
-        console.log("email")
+        console.log("email");
         console.log(e.target.value);
-        setEmail(e.target.value)
+        setEmail(e.target.value);
     };
+
     const onChangeHandlerPassword = (e) => {
         e.preventDefault();
-        console.log("pw")
+        console.log("pw");
         console.log(e.target.value);
-        setPassword(e.target.value)
+        setPassword(e.target.value);
     };
     return (
         <div>
-            <AuthorizeForm> onChangeHandlerPassword={onChangeHandlerPassword} onChangeHandlerEmail={onChangeHandlerEmail} onSubmitHandler={onSubmitHandler}</AuthorizeForm>
+            <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler}></AuthorizeForm>
         </div>
     )
 };

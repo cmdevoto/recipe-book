@@ -1,13 +1,6 @@
-
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import React, { useEffect, useState } from "react";
-import {
-    getAllUsers,
-    getByPassword,
-    getByEmail
-} from "../../Common/Services/UserLearnService";
-
+import React from "react";
 
 const AuthorizeForm = ({onChangeHandlerEmail, onChangeHandlerPassword, onSubmitHandler}) => {
  
