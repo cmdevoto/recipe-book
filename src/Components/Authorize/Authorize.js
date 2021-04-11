@@ -1,6 +1,6 @@
 import AuthorizeForm from './AuthorizeForm.js'
 import React, { useEffect, useState } from "react";
-import ProtectedRoute from 'react-protected-route-component'
+import ProtectedRoute from "../../Common/Services/ProtectedRoute";
 import {
     getAllUsers,
     getByPassword,
@@ -15,7 +15,7 @@ const Authorize = () => {
     const [password, setPassword] = useState();
     
     //token set true when email exists and password matches
-    const [token, setToken] = useState(false);
+    const [flag, setFlag] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
 
     useEffect(() => {
@@ -26,11 +26,11 @@ const Authorize = () => {
                     alert(
                         `${loggedInUser}, you successfully logged in!`
                     );
-                    setToken(true)
+                    setFlag(true);
                 }
                 else{
                     console.log("failed to log in");
-                    setToken(false);
+                    setFlag(false);
                 }
                 setLoggedIn(false);
             });
@@ -49,7 +49,7 @@ const Authorize = () => {
             */
         }
         console.log("end use effect")
-    }, [email, password, loggedIn, token]);
+    }, [email, password, loggedIn, flag]);
 
     const onSubmitHandler = (e) => {
         console.log("handled")
@@ -72,8 +72,12 @@ const Authorize = () => {
     };
     return (
         <div>
-            <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler}></AuthorizeForm>
+        <ProtectedRoute> 
+            flag={flag}
+        </ProtectedRoute>
+        <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler}></AuthorizeForm>
         </div>
+
     )
 };
 
