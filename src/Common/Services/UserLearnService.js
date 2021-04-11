@@ -26,10 +26,9 @@ export const createUser = (newUser) => {
 };
 
 export const logInUser = (email, password) => {
-    const user = new Parse.User();
     console.log("Logging in user: ", email);
 
-    return user
+    return Parse.User
         .logIn(email, password).then((userLoggedIn) => {
             return userLoggedIn;
         })
