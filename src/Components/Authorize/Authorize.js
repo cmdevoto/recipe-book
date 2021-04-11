@@ -19,6 +19,7 @@ const Authorize = () => {
     useEffect(() => {
         if (email && password && loggedIn){
             logInUser(email, password).then((loggedInUser) => {
+                console.log("checking logged in")
                 if (loggedInUser){
                     alert(
                         `${loggedInUser}, you successfully logged in!`
