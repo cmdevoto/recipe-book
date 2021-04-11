@@ -73,7 +73,7 @@ const Authorize = () => {
     return (
         <div>
             <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler}></AuthorizeForm>
-        <div>
+        </div>
     )
 };
 
