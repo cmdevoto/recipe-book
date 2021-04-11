@@ -1,11 +1,13 @@
 import AuthorizeForm from './AuthorizeForm.js'
 import React, { useEffect, useState } from "react";
+import ProtectedRoute from 'react-protected-route-component'
 import {
     getAllUsers,
     getByPassword,
     getByEmail,
     logInUser
 } from "../../Common/Services/UserLearnService";
+import Home from "../../Layouts/Home/Home.js";
 
 
 const Authorize = () => {
@@ -24,6 +26,11 @@ const Authorize = () => {
                     alert(
                         `${loggedInUser}, you successfully logged in!`
                     );
+                    setToken(true)
+                }
+                else{
+                    console.log("failed to log in");
+                    setToken(false);
                 }
                 setLoggedIn(false);
             });
@@ -42,7 +49,7 @@ const Authorize = () => {
             */
         }
         console.log("end use effect")
-    }, [email, password, loggedIn]);
+    }, [email, password, loggedIn, token]);
 
     const onSubmitHandler = (e) => {
         console.log("handled")
@@ -66,7 +73,7 @@ const Authorize = () => {
     return (
         <div>
             <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler}></AuthorizeForm>
-        </div>
+        <div>
     )
 };
 
