@@ -1,6 +1,7 @@
 import AuthorizeForm from './AuthorizeForm.js'
 import React, { useEffect, useState } from "react";
-import ProtectedRoute from "../../Common/Services/ProtectedRoute";
+//import ProtectedRoute from "../../Common/Services/ProtectedRoute";
+import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import {
     getAllUsers,
     getByPassword,
@@ -8,6 +9,9 @@ import {
     logInUser
 } from "../../Common/Services/UserLearnService";
 import Home from "../../Layouts/Home/Home.js";
+import { render } from '@testing-library/react';
+import { Redirect } from 'react-router';
+import Parse from "parse";
 
 
 const Authorize = () => {
@@ -23,17 +27,19 @@ const Authorize = () => {
             logInUser(email, password).then((loggedInUser) => {
                 console.log("checking logged in")
                 if (loggedInUser){
-                    alert(
-                        `${loggedInUser}, you successfully logged in!`
-                    );
                     setFlag(true);
+                    console.log("logged in: ", flag);
+                    alert(
+                        `You successfully logged in!`
+                    );
                 }
                 else{
-                    console.log("failed to log in");
                     setFlag(false);
+                    console.log("logged in: ", flag);
                 }
                 setLoggedIn(false);
             });
+
             /*
             getByEmail(email).then((gotEmail) => {
                 console.log("called after the end of the main stack. the value received/returned is: " + gotEmail);
@@ -70,15 +76,18 @@ const Authorize = () => {
         console.log(e.target.value);
         setPassword(e.target.value);
     };
+
+    console.log(Parse.User.current())
     return (
         <div>
-        <ProtectedRoute> 
-            flag={flag}
-        </ProtectedRoute>
         <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler}></AuthorizeForm>
         </div>
 
     )
 };
+
+//<ProtectedRoute 
+//flag={flag}>
+//</ProtectedRoute>
 
 export default Authorize;
