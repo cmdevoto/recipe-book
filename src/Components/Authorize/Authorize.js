@@ -1,6 +1,5 @@
 import AuthorizeForm from './AuthorizeForm.js'
 import React, { useEffect, useState } from "react";
-//import ProtectedRoute from "../../Common/Services/ProtectedRoute";
 import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import {
     logInUser
@@ -60,15 +59,17 @@ const Authorize = () => {
         setPassword(e.target.value);
     };
 
-    
-    console.log('current user: ', Parse.User.current())
-    console.log('authenticated user: ', Parse.User.current().authenticated())
     return (
         <div>
-        <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler} component={Home} flag={flag} path={path} email={email}></AuthorizeForm>
+            {flag? (
+                <Redirect to="/home" />
+            ): (
+                <div>
+                     <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler} component={Home} flag={flag} path={path} email={email}></AuthorizeForm>
+                </div>
+            )}
         </div>
-
-    )
+    );
 };
 
 //<ProtectedRoute 

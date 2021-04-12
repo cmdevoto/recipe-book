@@ -1,4 +1,5 @@
 import Parse from "parse";
+import { BrowserRouter as Redirect } from "react-router-dom";
 //import { logicalExpression } from "@babel/types";
 
 // SERVICE FOR PARSE SERVER OPERATIONS
@@ -40,9 +41,9 @@ export const logInUser = (email, password) => {
 export const loggedOut = () => {
     Parse.User.logOut().then(
         (success) => {
-
             console.log('successfully logged out');
-            console.log('Parse User is now: ', Parse.User.current());  //the same user!! 
+            console.log('Parse User is now: ', Parse.User.current());  //the same user!!
+            //<Redirect to="/login" /> 
         },
         (error) => {
             console.log('error logging out.');

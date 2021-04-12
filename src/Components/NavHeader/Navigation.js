@@ -26,7 +26,7 @@ function Navigation() {
             <Navbar.Brand href="/">My Recipe Book</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="navbar">
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/Home">Home</Nav.Link>
                 <NavDropdown title="Recipe Type" id="basic-nav-dropdown">
                     <NavDropdown.Item href="Breakfast" >Breakfast</NavDropdown.Item>
                     <NavDropdown.Item href="Lunch">Lunch</NavDropdown.Item>
