@@ -42,7 +42,7 @@ export const loggedOut = () => {
         (success) => {
             console.log('successfully logged out');
             console.log('Parse User is now: ', Parse.User.current());  //the same user!!
-            //<Redirect to="/login" /> 
+            
         },
         (error) => {
             console.log('error logging out.');
@@ -84,16 +84,7 @@ export const getByPassword = (password) => {
         return result;
     });
 };
-/*
-export const getRecipes = (username) => {
-    const Recipe = Parse.Object.extend("Recipe");
-    const query = new Parse.Query(Recipe);
-    query.equalTo("username", username)
-    return query.find().then((results) =>{
-        return results;
-    });
-};
-};*/
+
 // DELETE ACTION -- remove user by username
 
 export const removeUser = (username) => {

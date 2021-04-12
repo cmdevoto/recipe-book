@@ -1,3 +1,22 @@
+Version: 0.3.0 -- 12 April 2021
+Added:
+    User Authentication:
+        -Auth Component
+        -Registration Component to create new users
+        -Protected Routes that cannot be navigated to without authentication
+        -Protected routes to redirect to the  login page/auth component
+        -Logged in users cannot route to auth (login/signup) if already logged in
+        -Added a logout button
+        -Added the 2 routing mechanisms in Common/AppTools
+        -Added loggedOut, and logInUser to Services/UserLearnService.js 
+
+Changed:
+    -Changed our previous routing in App.js to include protected routes 
+    
+Fixed:
+    - users cannot manually type in URL to protected route if not authorized
+
+
 Version: 0.2.0 -- 29 March 2021
 
 Added:

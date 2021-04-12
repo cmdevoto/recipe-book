@@ -17,6 +17,7 @@ Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
 
 // redirects based on the path and calls the different layouts (Home and Add)
+//Utilizes 2 different routing mechanisms--LoginRoute & ProtectedRoute
 
 function App() {
 
