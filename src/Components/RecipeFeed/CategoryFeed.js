@@ -11,15 +11,15 @@ const CategoryFeed = () => {
     // obtain async data and render
     useEffect(() => {
         getAllRecipes().then((recipes) => {
-            console.log(recipes);
+            //console.log(recipes);
             setRecipes(recipes);
-            console.log(recipes[1]);
+            //console.log(recipes[1]);
         });
     }, []);
 
     //grab current category
     const type = window.location.pathname.substring(1)
-    console.log(type)
+    //console.log(type)
     let recipe_array = [];
     console.log("FOR")
     for (let i = 0; i < recipes.length; i++){

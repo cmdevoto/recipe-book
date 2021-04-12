@@ -10,7 +10,7 @@ import * as Env from "./environments.js";
 import Parse from "parse";
 import React, { useEffect, useState } from "react";
 import ProtectedRoute from "./Common/AppTools/ProtectedRoute.js"
-
+import LoginRoute from "./Common/AppTools/LoginRoute"
 
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
@@ -23,8 +23,8 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/login" exact component={Login}></Route>
-          <Route path="/register" exact component={Register}></Route>
+          <LoginRoute path="/login" exact component={Login}></LoginRoute>
+          <LoginRoute path="/register" exact component={Register}></LoginRoute>
           <ProtectedRoute path="/Home" exact component={Home}></ProtectedRoute>
           <ProtectedRoute path="/add" exact component={Add}></ProtectedRoute>
           <ProtectedRoute path="/Breakfast" exact component={Category}></ProtectedRoute>
