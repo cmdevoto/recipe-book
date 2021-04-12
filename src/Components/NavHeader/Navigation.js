@@ -7,8 +7,18 @@ import Nav from "react-bootstrap/Nav";
 //import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Parse from "parse";
+import {
+    loggedOut
+} from "../../Common/Services/UserLearnService";
 
-
+const testLogout = () =>{
+    
+    Parse.User.logOut().then(function(){
+        console.log(Parse.User.current());
+      }, function(error){
+        console.log(error);
+      });
+}
 function Navigation() {
 
     return(
@@ -27,7 +37,7 @@ function Navigation() {
                     <NavDropdown.Item href="AllRecipes">All Recipies</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
-                <Button variant="primary" type="submit" onSubmit={Parse.User.logout}>
+                <Button variant="primary" type="submit" onClick={loggedOut}>
                     logOut
                 </Button>
             </Nav>

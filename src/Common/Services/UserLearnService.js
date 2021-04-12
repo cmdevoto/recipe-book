@@ -36,18 +36,18 @@ export const logInUser = (email, password) => {
             alert(`Error: ${error.message}`);
         });
 };
-/*
-export const logOut = (email, password) => {
-    console.log("Logging out user: ", email);
 
-    return Parse.User
-        .logOut(email, password).then((userLoggedOut) => {
-            return userLoggedOut;
-        })
-        .catch((error) => {
-            alert(`Error: ${error.message}`);
+export const loggedOut = () => {
+    Parse.User.logOut().then(
+        (success) => {
+
+            console.log('successfully logged out');
+            console.log('Parse User is now: ', Parse.User.current());  //the same user!! 
+        },
+        (error) => {
+            console.log('error logging out.');
         });
-};*/
+};
 // READ ACTION - get recipe in Parse class recipe
 
 export const getAllUsers = () => {
