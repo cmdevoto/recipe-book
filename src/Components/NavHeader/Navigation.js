@@ -1,16 +1,15 @@
 import React from "react";
-//import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 //import Form from "react-bootstrap/Form";
 //import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Parse from "parse";
 import {
     loggedOut
 } from "../../Common/Services/UserLearnService";
 
+/*
 const testLogout = () =>{
     
     Parse.User.logOut().then(function(){
@@ -19,6 +18,8 @@ const testLogout = () =>{
         console.log(error);
       });
 }
+*/
+
 function Navigation() {
 
     return(

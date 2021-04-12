@@ -5,10 +5,11 @@ import Add from "./Layouts/Add/Add";
 import Category from "./Layouts/Category/Category.js";
 import Login from "./Layouts/Login/Login.js";
 import Register from "./Layouts/Register/Register.js"
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+//import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import * as Env from "./environments.js";
 import Parse from "parse";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProtectedRoute from "./Common/AppTools/ProtectedRoute.js"
 import LoginRoute from "./Common/AppTools/LoginRoute"
 

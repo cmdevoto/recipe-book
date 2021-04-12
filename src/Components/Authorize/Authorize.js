@@ -1,12 +1,10 @@
 import AuthorizeForm from './AuthorizeForm.js'
 import React, { useEffect, useState } from "react";
-import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import {
     logInUser
 } from "../../Common/Services/UserLearnService";
 import Home from "../../Layouts/Home/Home.js";
 import { Redirect } from 'react-router';
-import Parse from "parse";
 
 
 const Authorize = () => {
@@ -72,8 +70,5 @@ const Authorize = () => {
     );
 };
 
-//<ProtectedRoute 
-//flag={flag}>
-//</ProtectedRoute>
 
 export default Authorize;

@@ -1,11 +1,9 @@
 import React from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import Parse from "parse";
-import Login from "../../Layouts/Login/Login";
-import Home from "../../Layouts/Home/Home";
 
 //const ProtectedRoute = ({ component: Component, flag, path, ...rest }) => {
-const ProtectedRoute = ({ component: Component, path}) => { 
+const ProtectedRoute = ({ component: Component}) => { 
   const history = useHistory();
   console.log("history and rest: ", history);
 
@@ -14,7 +12,6 @@ const ProtectedRoute = ({ component: Component, path}) => {
   console.log("current user: ", currentUser);
 
  
-  //return currentUser ? (Component={Login} ? <Redirect to={Home} /> : <Component />) : <Redirect to="/login" />
   return currentUser ? <Component /> : <Redirect to="/login" />;
 };
 

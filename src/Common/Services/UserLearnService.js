@@ -1,5 +1,4 @@
 import Parse from "parse";
-import { BrowserRouter as Redirect } from "react-router-dom";
 //import { logicalExpression } from "@babel/types";
 
 // SERVICE FOR PARSE SERVER OPERATIONS
