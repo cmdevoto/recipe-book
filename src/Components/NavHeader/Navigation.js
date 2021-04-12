@@ -1,10 +1,12 @@
 import React from "react";
 //import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 //import Form from "react-bootstrap/Form";
 //import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Parse from "parse";
 
 
 function Navigation() {
@@ -25,6 +27,9 @@ function Navigation() {
                     <NavDropdown.Item href="AllRecipes">All Recipies</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
+                <Button variant="primary" type="submit" onSubmit={Parse.User.logout}>
+                    logOut
+                </Button>
             </Nav>
         </Navbar>
     );
