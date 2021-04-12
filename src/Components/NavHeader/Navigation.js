@@ -23,7 +23,7 @@ function Navigation() {
 
     return(
         <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="/">My Recipe Book</Navbar.Brand>
+            <Navbar.Brand href="/Home">My Recipe Book</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="navbar">
                 <Nav.Link href="/Home">Home</Nav.Link>
@@ -37,7 +37,7 @@ function Navigation() {
                     <NavDropdown.Item href="AllRecipes">All Recipies</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
-                <Button variant="primary" type="submit" onClick={loggedOut}>
+                <Button variant="primary" type="submit" href="login" onClick={loggedOut}>
                     logOut
                 </Button>
             </Nav>
