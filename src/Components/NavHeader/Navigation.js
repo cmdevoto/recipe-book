@@ -9,16 +9,6 @@ import {
     loggedOut
 } from "../../Common/Services/UserLearnService";
 
-/*
-const testLogout = () =>{
-    
-    Parse.User.logOut().then(function(){
-        console.log(Parse.User.current());
-      }, function(error){
-        console.log(error);
-      });
-}
-*/
 
 function Navigation() {
 
