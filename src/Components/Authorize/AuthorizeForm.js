@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import React from "react";
+import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 
-const AuthorizeForm = ({onChangeHandlerEmail, onChangeHandlerPassword, onSubmitHandler}) => {
- 
+
+const AuthorizeForm = ({onChangeHandlerEmail, onChangeHandlerPassword, onSubmitHandler, component,flag, path, email, ...rest}) => {
     return(
         <div>
             <Form onSubmit={onSubmitHandler}>
@@ -19,8 +20,10 @@ const AuthorizeForm = ({onChangeHandlerEmail, onChangeHandlerPassword, onSubmitH
                     Submit
                 </Button>
                 <p>Don't have an account? <a href="/register">Register Now</a> </p>
+                <ProtectedRoute>flag={flag} component={component} path={path} </ProtectedRoute>
             </Form>
         </div>
+
     );
 
 };

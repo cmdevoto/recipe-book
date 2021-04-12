@@ -3,18 +3,15 @@ import React, { useEffect, useState } from "react";
 //import ProtectedRoute from "../../Common/Services/ProtectedRoute";
 import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import {
-    getAllUsers,
-    getByPassword,
-    getByEmail,
     logInUser
 } from "../../Common/Services/UserLearnService";
 import Home from "../../Layouts/Home/Home.js";
-import { render } from '@testing-library/react';
 import { Redirect } from 'react-router';
 import Parse from "parse";
 
 
 const Authorize = () => {
+    const path = '/Home';
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     
@@ -25,13 +22,13 @@ const Authorize = () => {
     useEffect(() => {
         if (email && password && loggedIn){
             logInUser(email, password).then((loggedInUser) => {
-                console.log("checking logged in")
                 if (loggedInUser){
                     setFlag(true);
                     console.log("logged in: ", flag);
                     alert(
                         `You successfully logged in!`
                     );
+                    
                 }
                 else{
                     setFlag(false);
@@ -40,21 +37,7 @@ const Authorize = () => {
                 setLoggedIn(false);
             });
 
-            /*
-            getByEmail(email).then((gotEmail) => {
-                console.log("called after the end of the main stack. the value received/returned is: " + gotEmail);
-                return gotEmail;
-            });
-
-            getByEmail(email).then((emailCheck) => {
-                if (emailCheck){
-                    console.log(emailCheck)
-                }
-            setToken(true);
-            });
-            */
         }
-        console.log("end use effect")
     }, [email, password, loggedIn, flag]);
 
     const onSubmitHandler = (e) => {
@@ -77,10 +60,12 @@ const Authorize = () => {
         setPassword(e.target.value);
     };
 
-    console.log(Parse.User.current())
+    
+    console.log('current user: ', Parse.User.current())
+    console.log('authenticated user: ', Parse.User.current().authenticated())
     return (
         <div>
-        <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler}></AuthorizeForm>
+        <AuthorizeForm onChangeHandlerEmail={onChangeHandlerEmail} onChangeHandlerPassword={onChangeHandlerPassword} onSubmitHandler={onSubmitHandler} component={Home} flag={flag} path={path} email={email}></AuthorizeForm>
         </div>
 
     )

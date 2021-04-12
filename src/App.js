@@ -23,10 +23,9 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/" exact component={Login}></Route>
           <Route path="/login" exact component={Login}></Route>
+          <Route path="/Home" exact component={Home}></Route>
           <Route path="/register" exact component={Register}></Route>
-          <Route path="/add" exact component={Add}></Route>
           <Route path="/Breakfast" exact component={Category}></Route>
           <Route path="/Lunch" exact component={Category}></Route>
           <Route path="/Dinner" exact component={Category}></Route>
@@ -39,6 +38,16 @@ function App() {
     </Router>
   );
 }
-
+/*
+<Route path="/login" exact component={Login}></Route>
+          <Route path="/register" exact component={Register}></Route>
+          <Route path="/add" exact component={Add}></Route>
+          <Route path="/Breakfast" exact component={Category}></Route>
+          <Route path="/Lunch" exact component={Category}></Route>
+          <Route path="/Dinner" exact component={Category}></Route>
+          <Route path="/Dessert" exact component={Category}></Route>
+          <Route path="/Miscellaneous" exact component={Category}></Route>
+          <Route path="/AllRecipes" exact component={Home}></Route>
+          <Redirect to="/login" />*/
 
 export default App;
