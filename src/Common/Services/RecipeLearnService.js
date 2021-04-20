@@ -5,7 +5,7 @@ import Parse from "parse";
 
 // CREATE ACTION ~ new recipe
 
-export const createRecipe = (Name, Description, ImgPath, Type, Ingredients, Steps, Notes) => {
+export const createRecipe = (Name, Description, ImgPath, Type, Ingredients, Steps, Notes, Username) => {
     const Recipe = Parse.Object.extend("Recipe");
     const recipe = new Recipe();
 
@@ -17,6 +17,7 @@ export const createRecipe = (Name, Description, ImgPath, Type, Ingredients, Step
     recipe.set("ingredients", Ingredients);
     recipe.set("steps", Steps);
     recipe.set("notes", Notes);
+    recipe.set("username", Username);
     console.log(recipe)
 
     return recipe.save().then((result) => {

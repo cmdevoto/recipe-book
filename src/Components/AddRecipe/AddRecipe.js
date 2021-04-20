@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import {
     createRecipe
 } from "../../Common/Services/RecipeLearnService";
+import {
+    getCurrentUser
+} from "../../Common/Services/UserLearnService";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
-import AddRecipeForm from './AddRecipeForm.js'
+import AddRecipeForm from './AddRecipeForm.js';
+import Parse from "parse";
+
 toast.configure()
 
 const AddRecipe = () => {
@@ -26,8 +31,11 @@ const AddRecipe = () => {
 
     useEffect(() => {
         // Check for add flag and make sure name state variable is defined
-        if (name && description && imgPath && type && ingredients && steps && notes && add) {
-          createRecipe(name, description, imgPath, type, ingredients, steps, notes).then((newRecipe) => {
+
+        const username = getCurrentUser()
+        console.log(username)
+        if (name && description && imgPath && type && ingredients && steps && notes && username && add) {
+          createRecipe(name, description, imgPath, type, ingredients, steps, notes, username).then((newRecipe) => {
             setAdd(false);
             // Add the newly created recipe to the recipe array
             setRecipes([...recipes, newRecipe]);
