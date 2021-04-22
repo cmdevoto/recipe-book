@@ -61,6 +61,11 @@ export const getAllUsers = () => {
 export const getCurrentUser = () => {
     return Parse.User.current().attributes.username;
 };
+
+export const getCurrentUserFull = () => {
+    return Parse.User.current();
+}
+
 // READ ACTION
 
 export const getByUsername = (username) => {

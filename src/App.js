@@ -5,6 +5,7 @@ import Category from "./Layouts/Category/Category.js";
 import Individual from "./Layouts/Individual/Individual.js";
 import Login from "./Layouts/Login/Login.js";
 import Register from "./Layouts/Register/Register.js"
+import Profile from "./Layouts/Profile/Profile.js"
 //import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import * as Env from "./environments.js";
@@ -36,6 +37,7 @@ function App() {
           <ProtectedRoute path="/Miscellaneous" exact component={Category}></ProtectedRoute>
           <ProtectedRoute path="/AllRecipes" exact component={Home}></ProtectedRoute>
           <ProtectedRoute path="/MyRecipes" exact component={Individual}></ProtectedRoute>
+          <ProtectedRoute path="/Account" exact component={Profile}></ProtectedRoute>
           <Redirect to="/login" />
         </Switch>
       </div>

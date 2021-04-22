@@ -29,6 +29,7 @@ function Navigation() {
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
                 <Nav.Link href="/MyRecipes">My Recipes</Nav.Link>
+                <Nav.Link href="/Account">View Account</Nav.Link>
                 <Button variant="primary" type="submit" href="login" onClick={loggedOut}>
                     logOut
                 </Button>
