@@ -28,6 +28,7 @@ function Navigation() {
                     <NavDropdown.Item href="AllRecipes">All Recipies</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
+                <Nav.Link href="/MyRecipes">My Recipes</Nav.Link>
                 <Button variant="primary" type="submit" href="login" onClick={loggedOut}>
                     logOut
                 </Button>
