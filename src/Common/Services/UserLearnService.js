@@ -66,6 +66,16 @@ export const getCurrentUserFull = () => {
     return Parse.User.current();
 }
 
+export const getCurrentUserRecipeNumber = () => {
+    const Recipe = Parse.Object.extend("Recipe");
+    const query = new Parse.Query(Recipe);
+    const uname = Parse.User.current().attributes.username;
+    query.equalTo("username", { "__type": "Pointer", "className": "_User", "objectId": uname });
+    return query.find().then((results) => {
+        return results.length;
+    });
+};
+
 // READ ACTION
 
 export const getByUsername = (username) => {
