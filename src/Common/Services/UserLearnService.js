@@ -41,13 +41,13 @@ export const loggedOut = () => {
     Parse.User.logOut().then(
         (success) => {
             console.log('successfully logged out');
-            console.log('Parse User is now: ', Parse.User.current());  //the same user!!
-            
+            console.log('Parse User is now: ', Parse.User.current()); 
         },
         (error) => {
             console.log('error logging out.');
         });
 };
+
 // READ ACTION - get recipe in Parse class recipe
 
 export const getAllUsers = () => {
@@ -68,6 +68,8 @@ export const getByUsername = (username) => {
     });
 };
 
+
+
 export const getByEmail = (email) => {
     const User = Parse.Object.extend("User");
     const query = new Parse.Query(User);
@@ -85,12 +87,72 @@ export const getByPassword = (password) => {
     });
 };
 
-// DELETE ACTION -- remove user by username
 
-export const removeUser = (username) => {
-    const User = Parse.Object.extend("User");
-    const query = new Parse.Query(User);
-    query.get(username).then((user) => {
-        return user.destroy();
+
+export const resetPassword = async (email) =>{
+    console.log("resetting in user: ", email);
+
+    try {
+        const resetPassword = await Parse.User
+            .requestPasswordReset(email);
+        console.log('sent email');
+        alert(`Check Your Inbox!`);
+    } catch (error) {
+        alert(`Error: ${error.message}`);
+    }
+};
+
+
+/* Delete attempts*/
+export const removeRecipe = (id) => {
+    const Recipe = Parse.Object.extend("Recipe");
+    const query = new Parse.Query(Recipe);
+    query.get(id).then((recipe) => {
+        return recipe.destroy();
     });
+};
+// DELETE ACTION -- remove user by username
+//has auth error
+export const removeUser = (currUser) => {
+ //store current user
+ //log out
+ //clear memory storage
+ // delete account
+        return currUser.destroy()
+            .then((success) => {
+                    console.log('successfully deleted');
+                    console.log('Parse User is now: ', Parse.User.current()); 
+                },
+                (error) => {
+                    console.log('error deleting.', error);
+                });
+    
+    
+};
+
+//destroy not a functin ERROR
+export const deleteTest = () => {
+    Parse.User.destroy().then(
+        (success) => {
+            console.log('successfully deleted');
+            console.log('Parse User is now: ', Parse.User.current()); 
+        },
+        (error) => {
+            console.log('error deleting');
+        });
+}
+//destroy not a functin ERROR
+export const removeUser2 = async (username) =>{
+    console.log("deleting  user: ", username);
+    console.log('Parse User is now: ', Parse.User.current()); 
+    try {
+        const deleteUser = await Parse.User
+            .destroy().then(function(){
+                console.log('deleting user')
+                console.log('Parse User is now: ', Parse.User.current()); 
+                });
+    
+    } catch (error) {
+        alert(`Error: ${error.message}`);
+    }
 };

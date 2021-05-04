@@ -1,5 +1,6 @@
 import './App.css';
 //import Components from "./Components/Components.js";
+import Settings from "./Layouts/Settings/Settings";
 import Home from "./Layouts/Home/Home.js";
 import Add from "./Layouts/Add/Add";
 import Category from "./Layouts/Category/Category.js";
@@ -35,6 +36,7 @@ function App() {
           <ProtectedRoute path="/Dessert" exact component={Category}></ProtectedRoute>
           <ProtectedRoute path="/Miscellaneous" exact component={Category}></ProtectedRoute>
           <ProtectedRoute path="/AllRecipes" exact component={Home}></ProtectedRoute>
+          <ProtectedRoute path="/settings" exact component={Settings}></ProtectedRoute>
           <Redirect to="/login" />
         </Switch>
       </div>

@@ -20,6 +20,11 @@ const NewAccountForm = ({ user, onChange, onSubmit }) => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" value={user.password} name="password" onChange={onChange} placeholder="Password" />
                 </Form.Group>
+                <Form.Group controlId="formPicture">
+                    <Form.Label>Profile Picture</Form.Label>
+                    <Form.Control type="path" value={user.profile} name="picture" onChange={onChange} placeholder="Image Path" />
+                </Form.Group>
+
                 </div>
                 <Button variant="primary" type="submit" onSubmit={onSubmit}>
                     Create Acount
