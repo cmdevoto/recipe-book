@@ -21,12 +21,11 @@ const Settings = () => {
 
     return (
         //<body>
-            <div>
-                <Header></Header>
+            <div >
+                <Header>  </Header>
 
                 <FileUpload onFileSelectSuccess={(file) => setSelectedFile(file)}
                         onFileSelectError={({ error }) => alert(error)}></FileUpload>
-                <img></img>
 
             </div>
         //</body>

@@ -5,19 +5,31 @@ import Form from "react-bootstrap/Form";
 import Parse from "parse";
 import Button from "react-bootstrap/Button";
 import { uploadFile} from "../../Common/Services/FileLearnService";
-import './FileUpload.css'
 // Home Screen Layout -- utilizes Header and Feed 
 
 const FileUpload = ({onFileSelectError, onFileSelectSuccess}) => {
     const fileInput = useRef(null)
     /* Set profile pic as default or new profile*/
     const [imgPath, setImgPath] = useState();
+    const [newImg, setNewImg] = useState(false);
+    const [file, setFile] = useState();
     console.log('if check', Parse.User.current().get("profile"));
-
-    /*Profile info*/ 
-    var user = Parse.User.current();
-    var name= user.get("username");
-    var email = user.get("email")
+   
+    useEffect(() =>{
+        if (newImg && file) {
+            console.log("use Effect");
+            onFileSelectSuccess(file);
+            const name = file.name;
+            uploadFile(name, file, Parse.User.current()).then((profileAdded) => {
+                if (profileAdded){
+                    alert(
+                        `You successfully changed your profile!`
+                    );
+                }
+                setNewImg(false);
+            });
+        }
+    }, [newImg, file]);
 
     if(Parse.User.current().get("profile") != null){
         var profilePath = Parse.User.current().get("profile").url();
@@ -31,52 +43,25 @@ const FileUpload = ({onFileSelectError, onFileSelectSuccess}) => {
     const handleFileInput = (e) => {
 
         //onFileSelect(e.target.files[0]);
-        const file = e.target.files[0];
-
-        console.log('file input e check', file);
-        console.log("handling input");
-        if (file){
-            onFileSelectSuccess(file);
-            const name = file.name;
-            const currUser = Parse.User.current();
-            console.log('file info in HandleInput', file, name);
-            uploadFile(name, file, currUser);
-            
-        }
-        else onFileSelectError({ error: "Retry uploading profile iamge" });
-
+        setFile(e.target.files[0]);
+        setNewImg(true);
         //console.log('profile path',Parse.User.current().get("profile").url());
-    }
 
+    }
 
     return (
         <div >
-            <div >
-            <div class="card">
-                <h1>{name}</h1>
-                <p class="title">{email}</p>
-                <img style={{height:300, 
-                            width: 300,
-                            borderRadius: 150
-                            }}
-                        src={profilePath} className="justify-content-md-center"></img>
-                <br/>
-                <label class="update" for="upload-photo"> <img style={{width:40,
-                height: 40}}src="https://static.thenounproject.com/png/625182-200.png"/></label>
-                <input type="file" id="upload-photo" onChange={handleFileInput} accept='.jpeg, .png, JPG, .jpg'/>
-                <p><button  class="update"onClick={() => window.location.reload(false)}>Update Profile</button></p>
-            </div>
-            
-        </div>
+            <input type="file" id="inputProfile" onChange={handleFileInput} accept='.jpeg, .png, JPG, .jpg'/>
+            <button onClick={e => fileInput.current && fileInput.current.click()} >Upload</button>
+            <img style={{height:200, 
+                        width: 200,
+                        borderRadius:100 }}
+                    src={profilePath}></img>
         </div>
     );
 }
-
-
 //      <button onClick={e => fileInput.current && fileInput.current.click()} >Upload</button>
-export default FileUpload;
-
-
+  export default FileUpload;
 /*
 Notes
     -convert file to base 64 in file service
