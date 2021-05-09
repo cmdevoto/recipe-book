@@ -1,3 +1,20 @@
+Version: 0.4.0 -- 10 May 2021
+Added: 
+    My Recipes Feed
+        - A user now has the option (through the navigation bar) to view the recipes that they have created
+        - The view is the same as the other feeds currently in the application
+    View Account
+        - A user can view their profile information, including their username, email, account creation date, account updated date, and the number of reicpes that they have created to date
+    Deployed to Netlify
+        - The application has been deployed to netlify and can be accessed through the domain "eloquent-payne-3e7da3.netlify.app"
+
+Changed:
+    - When a user creates a recipe, their username is automatically attached to that recipe
+
+Fixed:
+    - the username attribute in the Recipes class is no longer unreachable and is updated for each new recipe created
+
+
 Version: 0.3.0 -- 12 April 2021
 Added:
     User Authentication:

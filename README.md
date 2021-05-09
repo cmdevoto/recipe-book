@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# Recipe Book
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by Caroline DeVoto and Stephanie Keene and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started
 
 In the project directory, you can run:
 
@@ -13,6 +13,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+You will be prompted with a login page where you can create a new account.
+
+Upon entry into the application, you will see recipes that others have added and you can view based on recipe type.
+
+You can create your own recipe and view the recipes that you have created in a separate tab.
+
+Lastly, you can view your profile information and log out when you are done.
+
+
+## Other Available Scripts
 
 ### `npm test`
 
