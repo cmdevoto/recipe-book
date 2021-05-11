@@ -32,15 +32,7 @@ function Navigation() {
     console.log(email)
     console.log("NAV file check", user.get("profile"));
     
-    const onClickHandlerReset = (e) => {
-        e.preventDefault();
-        console.log("handled reset");
-        var email = user.get("email")
-        // Trigger add flag to create recipe and
-        // re-render list with new recipe
-        resetPassword(email)
-
-      };
+   
       const onClickHandlerDelete = (e) => {
         e.preventDefault();
         console.log("handled delete");
@@ -49,14 +41,12 @@ function Navigation() {
         localStorage.clear();
         loggedOut()
         localStorage.clear();
-
-
       };
     return(
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark"   variant="dark" >
             <Navbar.Brand href="/Home">My Recipe Book</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Nav className="container-fluid">
+            <Nav className="navbar">
                 <Nav.Link href="/Home">Home</Nav.Link>
                 <NavDropdown title="Recipe Type" id="basic-nav-dropdown">
                     <NavDropdown.Item href="Breakfast" >Breakfast</NavDropdown.Item>
@@ -68,18 +58,8 @@ function Navigation() {
                     <NavDropdown.Item href="AllRecipes">All Recipies</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add">Add Recipe</Nav.Link>
-                <Nav.Link href="/settings">Settings page</Nav.Link>
-                <Nav.Item className="ml-auto">
-                    <NavDropdown title="Settings" id="basic-nav-dropdown">
-                        <NavDropdown.Item> Username: {name}</NavDropdown.Item>
-                        <NavDropdown.Item> Email: {email}</NavDropdown.Item>
-                        <Button variant="light" type="submit"  onClick={loggedOut}> logOut</Button>
+                <Nav.Link href="/settings" className="ml-auto">Settings</Nav.Link>
 
-                    </NavDropdown>
-
-                </Nav.Item>
-                <Button variant="light" type="submit"  onClick={onClickHandlerDelete}> delete</Button>
-                <Button variant="light" type="submit"  onClick={onClickHandlerReset}> reset</Button>
             </Nav>
         </Navbar>
     );

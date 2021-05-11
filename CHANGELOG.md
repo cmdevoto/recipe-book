@@ -1,3 +1,12 @@
+Version: 0.4.0 -- 10 May 2021
+Added:
+    Settings Page:
+        -Profile picture with ability to change
+        -Logout Button on Settings Page
+        -Reset password through email
+        -Display User's info on Settings Page
+        -Update profile button to upload any picture changes 
+        
 Version: 0.3.0 -- 12 April 2021
 Added:
     User Authentication:
@@ -8,7 +17,7 @@ Added:
         -Logged in users cannot route to auth (login/signup) if already logged in
         -Added a logout button
         -Added the 2 routing mechanisms in Common/AppTools
-        -Added loggedOut, and logInUser to Services/UserLearnService.js 
+        
 
 Changed:
     -Changed our previous routing in App.js to include protected routes 

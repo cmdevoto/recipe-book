@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Parse from "parse";
 import Button from "react-bootstrap/Button";
 import { uploadFile} from "../../Common/Services/FileLearnService";
+import {resetPassword, loggedOut} from "../../Common/Services/UserLearnService";
 import './FileUpload.css'
 // Home Screen Layout -- utilizes Header and Feed 
 
@@ -26,7 +27,7 @@ const FileUpload = ({onFileSelectError, onFileSelectSuccess}) => {
     }
     else{
         console.log('in profile path else');
-        var profilePath = "https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg";
+        var profilePath = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b0b4c759-ad9c-4425-a9f4-ab89e2fd9837/de8cefl-35c0bc59-59b9-42ab-b19f-5c73828bb78e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IwYjRjNzU5LWFkOWMtNDQyNS1hOWY0LWFiODllMmZkOTgzN1wvZGU4Y2VmbC0zNWMwYmM1OS01OWI5LTQyYWItYjE5Zi01YzczODI4YmI3OGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.81ixeN9b4cfDmfBlskK9CUyAMDtRhYNU7lfwTI8WI5Q";
     }
     const handleFileInput = (e) => {
 
@@ -47,7 +48,15 @@ const FileUpload = ({onFileSelectError, onFileSelectSuccess}) => {
 
         //console.log('profile path',Parse.User.current().get("profile").url());
     }
+    const onClickHandlerReset = (e) => {
+        e.preventDefault();
+        console.log("handled reset");
+        var email = user.get("email")
+        // Trigger add flag to create recipe and
+        // re-render list with new recipe
+        resetPassword(email)
 
+      };
 
     return (
         <div >
@@ -61,10 +70,12 @@ const FileUpload = ({onFileSelectError, onFileSelectSuccess}) => {
                             }}
                         src={profilePath} className="justify-content-md-center"></img>
                 <br/>
-                <label class="update" for="upload-photo"> <img style={{width:40,
+                <label  for="upload-photo"> <img style={{width:40,
                 height: 40}}src="https://static.thenounproject.com/png/625182-200.png"/></label>
                 <input type="file" id="upload-photo" onChange={handleFileInput} accept='.jpeg, .png, JPG, .jpg'/>
-                <p><button  class="update"onClick={() => window.location.reload(false)}>Update Profile</button></p>
+                <p><button  class="uploadButton"onClick={() => window.location.reload(false)}>Update Profile</button></p>
+                <p><button  class="uploadButton"onClick={onClickHandlerReset}>Reset Password</button></p>
+                <p><button  class="uploadButton"onClick={loggedOut}>Logout</button></p>
             </div>
             
         </div>
@@ -73,7 +84,6 @@ const FileUpload = ({onFileSelectError, onFileSelectSuccess}) => {
 }
 
 
-//      <button onClick={e => fileInput.current && fileInput.current.click()} >Upload</button>
 export default FileUpload;
 
 
@@ -86,19 +96,4 @@ Notes
     -second attribute that points to new profile picture
 */
 
-  /*
-  //currently doing nothing
-    const onClickHandlerUpload = (e) => {
-        e.preventDefault();
-        console.log("handled upload");
-        //console.log('file info', selectedFile);
-      };
-    return (
-        //<body>
-            <div>
-                <img id="imageEl" src="" alt=""/>
-                <input type="file" id="inputEl" value={selectedFile} onChange={(e) => setSelectedFile(e.target.files[0])}/>
-                <button id="buttonEl" onClick={onClickHandlerUpload}>Upload</button>
-            </div>
-        //</body>
-    );*/
+ 
