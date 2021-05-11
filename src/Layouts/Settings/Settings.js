@@ -14,9 +14,9 @@ const Settings = () => {
         justifyContent: "center"
     }
 
+    //Settings page that handles error or success from displaying profile, gets profile information from FileUpload component
     
     const [selectedFile, setSelectedFile] = useState(null);
-    //const [name, setName] = useState("");
 
 
     return (
@@ -31,7 +31,5 @@ const Settings = () => {
         //</body>
     );
 };
-/*<FileUpload onFileSelectSuccess={(file) => setSelectedFile(file)}
-                        onFileSelectError={({ error }) => alert(error)}></FileUpload>
-*/
+
   export default Settings;
